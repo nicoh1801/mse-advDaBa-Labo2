@@ -5,4 +5,3 @@
 **/.vscode/
 target/
 .bloop/
-neo4j_mount/
