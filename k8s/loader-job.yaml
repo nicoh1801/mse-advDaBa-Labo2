@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: neo4j-loader
+  namespace: hertl-adv-daba-26
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      labels:
+        app: neo4j-loader
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: loader
+          image: nicolasdockerhertling/neo4jtp:latest
+          env:
+            - name: JSON_FILE_URL
+              value: "http://vmrum.isc.heia-fr.ch/files/DBLP-Citation-network-V18.jsonl"
+            - name: MAX_NODES
+              value: "1000000"
+            - name: BATCH_SIZE
+              value: "1000"
+            - name: NEO4J_IP
+              value: "neo4j"
+            - name: NEO4J_USER
+              value: "neo4j"
+            - name: NEO4J_PASSWORD
+              value: "test"
+          resources:
+            requests:
+              cpu: "2"
+              memory: "3000Mi"
+            limits:
+              cpu: "2"
+              memory: "3000Mi"
