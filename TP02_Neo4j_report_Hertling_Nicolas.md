@@ -4,7 +4,7 @@
 - Version 1.0
 #
 - namespace: hertl-adv-daba-26
-- repo git: https://github.com/nicoh1801/mse-advDaBa-Labo2
+- repo git: [https://github.com/nicoh1801/mse-advDaBa-Labo2](https://github.com/nicoh1801/mse-advDaBa-Labo2)
 - ID exact du pod Neo4j: neo4j-6b6c5dc9f4-tw5qb
 - ID du pod/job loader: neo4j-loader-psfc7
 - Credentials Neo4j: User: neo4j Password: test
