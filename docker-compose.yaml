@@ -27,9 +27,12 @@ services:
     volumes:
       - $PWD/dblpExample.jsonl:/file.jsonl
     environment:
-      - JSON_FILE=/file.jsonl
+      - JSON_FILE_URL=http://vmrum.isc.heia-fr.ch/files/DBLP-Citation-network-V18.jsonl 
       - MAX_NODES=10000
       - NEO4J_IP=172.24.0.10 # must be the same as above
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=test
+      - BATCH_SIZE=1000
     deploy:
       resources:
         limits:
